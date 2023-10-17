@@ -26,8 +26,8 @@
             // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
             // | CTRL |  A  |  S  |  R  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
             // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
-
+            //                    | GUI | LWR | 1:ENT |   | SPC | RSE  | ALT |
+                                                2:CTRL
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp B       &kp J      &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
 &kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp G       &kp M      &kp N  &kp E      &kp I    &kp O     &kp SQT
@@ -45,7 +45,7 @@
 
             bindings = <
 &kp TAB     &kp N1  &kp N2  &kp N3    &kp N4  &kp N5    &kp N6  &kp N7    &kp UP    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &trans  &trans  &trans    &trans  &trans    &trans  &kp LEFt  &kp DOWN  &kp RIGHT  &trans  &trans
+&bt BT_CLR  &trans  &trans  &trans    &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
 &kp LSHFT   &trans  &trans  &trans    &trans  &trans    &trans  &trans    &trans    &trans     &trans  &trans
                             &kp LGUI  &trans  &trans    &trans  &trans    &kp RALT
             >;
