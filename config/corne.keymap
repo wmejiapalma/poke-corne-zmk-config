@@ -18,6 +18,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <38 41>;
+            bindings = <&mo 3>;
+        }
+    }
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -46,14 +55,14 @@
             label = "Lower";
             bindings = <
                 // __________________________________________________________________________________________________________
-                // |  TAB  |   1   |   2   |   3   |   4   |   5   |        |   6   |   7   |   8   |   9   |   0    | BKSP |
-                  &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5           &kp N6 &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
+                // |  TAB  |   !   |   @   |   #   |   $   |   %   |        | PG_UP   |   &   |   UP   |   (   |    )   | BKSP |
+                &kp TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT      &kp PG_UP &kp AMPS &kp UP &kp LPAR &kp RPAR  &kp BSPC
                 // __________________________________________________________________________________________________________
-                // |  CTRL |   \   |       |       |   -   |   `   |        | PG_UP   |  LFT  |   UP  |  RGT  |      |   '  |
-                 &kp LCTRL &kp BSLH &trans &trans &kp MINUS &kp GRAVE     &kp PG_UP &kp LEFT &kp UP &kp RIGHT  &trans  &kp DOUBLE_QUOTES
+                // |  CTRL |   \   |       |       |   -   |   `   |        | PG_DN |  LFT  |  DWN   |  RGT  |      |   '  |
+                 &kp LCTRL &kp BSLH &trans &trans &kp MINUS &kp GRAVE     &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT  &trans  &kp SINGLE_QUOTE
                 // _________________________________-------__________________________-------_________________________________
-                // |  SHFT |       |       |       |   _   |       |        | PG_DN  |       |  DOWN |       |       | ESC  |
-                 &kp LSHFT  &trans  &trans &trans &kp UNDER  &trans       &kp PG_DN  &trans &kp DOWN  &trans  &trans &kp ESC
+                // |  SHFT |       |       |       |   _   |       |        |       |       |        |       |       | ESC  |
+                 &kp LSHFT  &trans  &trans &trans &kp UNDER  &trans          &trans  &trans  &trans  &trans  &trans &kp ESC
                 //
                 // __________________________________________________________________________________________________________
                 //                   |   GUI   |         |         |        |          |         |   ALT    |
@@ -65,8 +74,8 @@
             label = "Raise";
             bindings = <
                 // __________________________________________________________________________________________________________
-                // |  TAB  |   !   |   @   |   #   |   $   |   %   |        |   ^   |   &   |   *   |   (   |    )   | BKSP |
-                &kp TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT    &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR  &kp BSPC
+                // |  TAB  |   1   |   2   |   3   |   4   |   5   |        |   6   |   7   |   8   |   9   |   0    | BKSP |
+                  &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5           &kp N6 &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
                 // __________________________________________________________________________________________________________
                 // |  CTRL |  F1   |  F2   |  F3   |  F4   |   F5  |        |       |   {   |   }   |       |        | ENT  |
                 &kp LCTRL &kp F1  &kp F2  &kp F3  &kp F4   &kp F5       &kp EQUAL   &kp LBRC &kp RBRC &trans &trans &kp ENTER
@@ -79,5 +88,23 @@
                                     &kp  F11   &kp F12     &trans         &trans      &trans     &kp RALT 
             >;
         };
+        extra_layer {
+            label = "Extra";
+            bindings = <
+                // __________________________________________________________________________________________________________
+                // | BT_CLR|       |       |       |BT_PRV | BT_NXT|        |       |       |       |       |        | BKSP |
+                &bt BT_CLR  &trans  &trans  &trans &bt BT_PRV &bt BT_NXT     &trans  &trans  &trans  &trans  &trans   &kp BSPC
+                // __________________________________________________________________________________________________________
+                // |       |       |       |       |       |       |        |       |       |       |       |        | ENT  |
+                    &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans  &kp ENTER
+                // __________________________________________________________________________________________________________
+                // |       |       |       |       |       |       |        |       |       |       |       |        | ENT  |
+                    &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans   &kp ENTER
+                //
+                // __________________________________________________________________________________________________________
+                //                   |         |         |         |        |          |         |          |
+                                      &trans     &trans     &trans           &trans      &trans     &trans 
+            >;
+        }
     };
 };
