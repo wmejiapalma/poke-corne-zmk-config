@@ -47,11 +47,11 @@
                 // |  TAB  |   1   |   2   |   3   |   4   |   5   |        |   6   |   7   |   8   |   9   |   0    | BKSP |
                   &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5           &kp N6 &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
                 // __________________________________________________________________________________________________________
-                // |  CTRL |   \   |       |       |   -   |   `   |        |       |  LFT  |   UP  |  RGT  |        | ENT  |
-                 &kp LCTRL &kp BSLH &trans &trans &kp MINUS &kp GRAVE       &trans &kp LEFT &kp UP &kp RIGHT  &trans  &trans
+                // |  CTRL |   \   |       |       |   -   |   `   |        | PG_UP   |  LFT  |   UP  |  RGT  |        | ENT  |
+                 &kp LCTRL &kp BSLH &trans &trans &kp MINUS &kp GRAVE     &kp PG_UP &kp LEFT &kp UP &kp RIGHT  &trans  &trans
                 // _________________________________-------__________________________-------_________________________________
-                // |  SHFT |       |       |       |   _   |       |        |       |       |  DOWN |       |        | ESC  |
-                 &kp LSHFT  &trans  &trans &trans &kp UNDER  &trans         &trans  &trans &kp DOWN  &trans  &trans &kp ESC
+                // |  SHFT |       |       |       |   _   |       |        | PG_DN  |       |  DOWN |       |        | ESC  |
+                 &kp LSHFT  &trans  &trans &trans &kp UNDER  &trans       &kp PG_DN  &trans &kp DOWN  &trans  &trans &kp ESC
                 //
                 // __________________________________________________________________________________________________________
                 //                   |   GUI   |         |         |        |          |         |   ALT    |
