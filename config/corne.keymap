@@ -22,6 +22,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            label = "Base";
             bindings = <
                 // __________________________________________________________________________________________________________
                 // |  TAB  |   Q   |   W   |   F   |   P   |   B   |        |   J   |   L   |   U   |   Y   |   ;    | BKSP |
@@ -42,15 +43,16 @@
         };
 
         lower_layer {
+            label = "Lower";
             bindings = <
                 // __________________________________________________________________________________________________________
                 // |  TAB  |   1   |   2   |   3   |   4   |   5   |        |   6   |   7   |   8   |   9   |   0    | BKSP |
                   &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5           &kp N6 &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
                 // __________________________________________________________________________________________________________
-                // |  CTRL |   \   |       |       |   -   |   `   |        | PG_UP   |  LFT  |   UP  |  RGT  |        | ENT  |
-                 &kp LCTRL &kp BSLH &trans &trans &kp MINUS &kp GRAVE     &kp PG_UP &kp LEFT &kp UP &kp RIGHT  &trans  &trans
+                // |  CTRL |   \   |       |       |   -   |   `   |        | PG_UP   |  LFT  |   UP  |  RGT  |      |   '  |
+                 &kp LCTRL &kp BSLH &trans &trans &kp MINUS &kp GRAVE     &kp PG_UP &kp LEFT &kp UP &kp RIGHT  &trans  &kp DOUBLE_QUOTES
                 // _________________________________-------__________________________-------_________________________________
-                // |  SHFT |       |       |       |   _   |       |        | PG_DN  |       |  DOWN |       |        | ESC  |
+                // |  SHFT |       |       |       |   _   |       |        | PG_DN  |       |  DOWN |       |       | ESC  |
                  &kp LSHFT  &trans  &trans &trans &kp UNDER  &trans       &kp PG_DN  &trans &kp DOWN  &trans  &trans &kp ESC
                 //
                 // __________________________________________________________________________________________________________
@@ -60,6 +62,7 @@
         };
 
         raise_layer {
+            label = "Raise"
             bindings = <
                 // __________________________________________________________________________________________________________
                 // |  TAB  |   !   |   @   |   #   |   $   |   %   |        |   ^   |   &   |   *   |   (   |    )   | BKSP |
