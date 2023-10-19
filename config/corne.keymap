@@ -41,7 +41,7 @@
 
 / {
     
-    //TODO: maybe replace the LCTRL with backspace for tap and hold for something else (maybe a layer switch)
+    //TODO: maybe replace the LCTRL with backspace for tap and hold for something else ()
 
     behaviors {
         escdelete: escdelete {
@@ -144,7 +144,7 @@
             bindings = <
                 // __________________________________________________________________________________________________________
                 // |       |       |       |       |       |       |        |   MW_UP  |         |  M_UP  |         |        | BKSP |
-                    &trans  &trans  &trans  &trans  &trans   &trans     &mwh SCROLL_UP  &trans  &trans  &mmv MOVE_UP  &trans   &kp BSPC
+                    &trans  &trans  &trans  &trans  &trans   &trans     &mwh SCROLL_UP  &trans  &mmv MOVE_UP &trans &trans   &kp BSPC
                 // __________________________________________________________________________________________________________
                 // |       |       |       |       |       |       |        |   MW_DWN    |  M_LFT  |  M_DWN  |  M_RGT  |        | ENT  |
                     &trans  &trans  &trans  &trans  &trans  &trans      &mwh SCROLL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans  &kp ENTER
