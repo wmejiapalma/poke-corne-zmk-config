@@ -11,7 +11,7 @@
 
 
 
-#define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
+#define U_MOUSE_MOVE_MAX 1200                     /* <--- New max speed setting (default: 600) */
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
@@ -24,7 +24,7 @@
     time-to-max-speed-ms = <400>;             /* <--- How long time until max speed is reached (default: 500) */
 };
 
-#define U_MOUSE_SCROLL_MAX 100                    /* <--- New max speed setting (default: 10) */
+#define U_MOUSE_SCROLL_MAX 50                    /* <--- New max speed setting (default: 10) */
 
 #undef SCROLL_UP
 #undef SCROLL_DOWN
@@ -34,6 +34,7 @@
 #define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+//LEFT, DOWN, RIGHT mouse keys in one macro so that the layout can be better organized
 
 &mwh {
   time-to-max-speed-ms = <500>;                 /* <--- How long time until max speed is reached */
@@ -60,7 +61,7 @@
             bindings = <&mo 3>;
         };
     };
-
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -79,7 +80,8 @@
                 // 
                 // __________________________________________________________________________________________________________
                 //                   |   GUI   |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                                    &kp LGUI    &mo 1       &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+                                      &kp LGUI   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+
 
 
             >;
@@ -98,16 +100,16 @@
                 // |  SHFT |  F6   |  F7   |  F8   |  F9   |  F10  |        |       |       |       |       |        | ESC  |
                 &kp LSHFT &kp F6  &kp F7  &kp F8  &kp F9  &kp F10           &trans  &trans  &trans &trans &trans &kp ESC
                 // __________________________________________________________________________________________________________
-                //                   |   GUI   |         |         |        |   F11     |   F12    |   ALT    |
-                                    &kp LGUI      &trans     &trans           &kp F11     &kp F12     &kp RALT 
+                //                   |   GUI   |         |         |        |   SPC     |   F11    |   F12    |
+                                    &kp LGUI      &trans     &trans         &kp SPACE   &kp F11    &kp F12 
             >;
         };
         raise_layer {
             label = "Raise";
             bindings = <
                 // __________________________________________________________________________________________________________
-                // |       |   1   |   2   |   3   |   4   |   5   |        |   6   |   7   |   8   |   9   |   0    | BKSP |
-                    &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5           &kp N6 &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
+                // |       |   1   |   2   |   3   |   4   |   5   |        |   6   |   7   |   8   |   9   |   0    |      |
+                    &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5           &kp N6 &kp N7  &kp N8  &kp N9  &kp N0  &trans
                 // _________________________________________________________________________________________________________
                 // |  CTRL |       |       |       |   -   |   `   |        |   =   |   {   |   }   |       |   \    | ENT  |
                  &kp LCTRL  &trans &trans &trans &kp MINUS &kp GRAVE     &kp EQUAL   &kp LBRC &kp RBRC &trans &trans &kp ENTER
@@ -124,14 +126,14 @@
             label = "Extra";
             bindings = <
                 // __________________________________________________________________________________________________________
-                // | BT_CLR|       |       |       |BT_PRV | BT_NXT|        |       |       |       |       |        | BKSP |
-                &bt BT_CLR  &trans  &trans  &trans &bt BT_PRV &bt BT_NXT     &trans  &trans  &trans  &trans  &trans   &kp BSPC
+                // | BT_CLR|       |       |       |BT_PRV | BT_NXT|        |       |       |       |       |        |      |
+                &bt BT_CLR  &trans  &trans  &trans &bt BT_PRV &bt BT_NXT     &trans  &trans  &trans  &trans  &trans   &trans
                 // __________________________________________________________________________________________________________
-                // |       |       |       |VOL_DWN|VOL_UP |       |        |       |       |       |       |        | ENT  |
-                &trans &trans &trans   &kp C_VOL_DN &kp C_VOL_UP &trans       &trans  &trans  &trans  &trans  &trans  &kp ENTER
+                // |       |       |       |VOL_DWN|VOL_UP |       |        |       | PSCRN |       |       |        | ENT  |
+                &trans &trans &trans   &kp C_VOL_DN &kp C_VOL_UP &trans       &trans &kp PSCRN  &trans  &trans  &trans  &kp ENTER
                 // _________________________________-------__________________________-------_________________________________
-                // |       |       |       |       |       |       |        |       |       |       |       |        | ENT  |
-                    &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans   &kp ENTER
+                // |       |       |       |       |       |       |        |       |       |       |       |        |      |
+                    &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans   &trans
                 //
                 // __________________________________________________________________________________________________________
                 //                   |         |         |         |        |          |         |          |
@@ -142,8 +144,8 @@
             label = "Mouse";
             bindings = <
                 // __________________________________________________________________________________________________________
-                // |       |       |       |       |       |       |        |   MW_UP  | M_RCLK  |  M_UP  |         |        | BKSP |
-                    &trans  &trans  &trans  &trans  &trans   &trans     &mwh SCROLL_UP &mkp LCLK &mmv MOVE_UP &trans &trans   &kp BSPC
+                // |       |       |       |       |MDIA_PP| MUTE |        |   MW_UP  | M_RCLK  |  M_UP  |         |        | BKSP |
+                    &trans  &trans  &trans  &trans &kp C_PP &kp C_MUTE     &mwh SCROLL_UP &mkp LCLK &mmv MOVE_UP &trans &trans   &kp BSPC
                 // __________________________________________________________________________________________________________
                 // |       |       |       |VOL_DWN|VOL_UP |       |        |   MW_DWN    |  M_LFT  |  M_DWN  |  M_RGT  |        | ENT  |
                    &trans  &trans &trans &kp C_VOL_DN &kp C_VOL_UP &trans      &mwh SCROLL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans  &kp ENTER
