@@ -101,7 +101,7 @@
                 &kp LSHFT &kp F6  &kp F7  &kp F8  &kp F9  &kp F10           &trans  &trans  &trans &trans &trans &kp ESC
                 // __________________________________________________________________________________________________________
                 //                   | GUISHFT |         |         |        |   SPC     |   F11    |   F12    |
-                            &lguishft LSHFT LGUI    &trans     &trans         &kp SPACE   &kp F11    &kp F12 
+                                  &kp LGUI        &trans     &trans         &kp SPACE   &kp F11    &kp F12 
             >;
         };
         raise_layer {
