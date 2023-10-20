@@ -53,16 +53,6 @@
             bindings = <&kp ESC>, <&kp DELETE>;
         };
 
-        lguishft: lguishft {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold-Tap Behavior";
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
-
     };
 
     combos {
@@ -91,8 +81,8 @@
                  &kp LSHFT &kp Z   &kp X   &kp C   &kp D   &kp V            &kp K   &kp H  &kp COMMA  &kp DOT &kp FSLH &escdelete
                 // 
                 // __________________________________________________________________________________________________________
-                //                   | GUISHFT  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                            &lguishft LSHFT LGUI    &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+                //                   |   GUI  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
+                                    &kp LGUI    &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
             >;
         };
