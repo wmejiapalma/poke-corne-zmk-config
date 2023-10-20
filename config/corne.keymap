@@ -55,6 +55,7 @@
         ht: ht {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold-Tap Behavior";
+            #binding-cells = <2>;
             tapping_term_ms = <100>;
             quick_tap_ms = <75>;
             flavor = "tap-preferred";
