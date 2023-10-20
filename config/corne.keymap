@@ -92,7 +92,7 @@
                 // 
                 // __________________________________________________________________________________________________________
                 //                   | GUISHFT  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                            &mt LGUI LSHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+                            &lguishft LSHFT LGUI    &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
             >;
         };
@@ -111,7 +111,7 @@
                 &kp LSHFT &kp F6  &kp F7  &kp F8  &kp F9  &kp F10           &trans  &trans  &trans &trans &trans &kp ESC
                 // __________________________________________________________________________________________________________
                 //                   | GUISHFT |         |         |        |   SPC     |   F11    |   F12    |
-                            &lguishft LGUI LSHFT    &trans     &trans         &kp SPACE   &kp F11    &kp F12 
+                            &lguishft LSHFT LGUI    &trans     &trans         &kp SPACE   &kp F11    &kp F12 
             >;
         };
         raise_layer {
