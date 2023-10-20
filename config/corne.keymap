@@ -92,7 +92,7 @@
                 // 
                 // __________________________________________________________________________________________________________
                 //                   | GUISHFT  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                            &lguishft LGUI LSHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+                            &mt LGUI LSHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
             >;
         };
