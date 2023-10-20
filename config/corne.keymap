@@ -51,6 +51,15 @@
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp DELETE>;
         };
+        guishft: guishft {
+            compatible = "zmk,behavior-hold-tap";
+            label = "GUISHFT";
+            #binding-cells = <0>;
+            tapping_term_ms = <100>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp LGUI>, <&kp LSHFT>;
+        };
     };
 
     combos {
@@ -79,8 +88,8 @@
                  &kp LSHFT &kp Z   &kp X   &kp C   &kp D   &kp V            &kp K   &kp H  &kp COMMA  &kp DOT &kp FSLH &escdelete
                 // 
                 // __________________________________________________________________________________________________________
-                //                   |   GUI   |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                                      &kp LGUI   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+                //                   | GUISHFT  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
+                                      &GUISHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
 
 
@@ -118,8 +127,8 @@
                  &kp LSHFT  &trans  &trans &trans &kp UNDER  &trans          &trans  &kp LBKT &kp RBKT &trans &trans &kp ESC
                 //
                 // __________________________________________________________________________________________________________
-                //                   |         |         |         |        |          |         |   ALT    |
-                                      &trans   &trans     &trans             &trans      &trans     &kp RALT 
+                //                   |         |         |  SPC   |        |          |         |   ALT    |
+                                      &trans   &trans     &kp SPACE             &trans      &trans     &kp RALT 
             >;
         };
         extra_layer {
