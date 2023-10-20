@@ -52,13 +52,13 @@
             bindings = <&kp ESC>, <&kp DELETE>;
         };
         
-        ht: ht {
+        lguishft: lguishft {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold-Tap Behavior";
             #binding-cells = <2>;
             tapping_term_ms = <100>;
-            quick_tap_ms = <75>;
-            flavor = "tap-preferred";
+            quick_tap_ms = <200>;
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
 
@@ -91,8 +91,7 @@
                 // 
                 // __________________________________________________________________________________________________________
                 //                   | GUISHFT  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                                    &ht LGUI LSHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
-
+                            &lguishft LGUI LSHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
             >;
         };
@@ -110,8 +109,8 @@
                 // |  SHFT |  F6   |  F7   |  F8   |  F9   |  F10  |        |       |       |       |       |        | ESC  |
                 &kp LSHFT &kp F6  &kp F7  &kp F8  &kp F9  &kp F10           &trans  &trans  &trans &trans &trans &kp ESC
                 // __________________________________________________________________________________________________________
-                //                   |   GUI   |         |         |        |   SPC     |   F11    |   F12    |
-                                    &kp LGUI      &trans     &trans         &kp SPACE   &kp F11    &kp F12 
+                //                   | GUISHFT |         |         |        |   SPC     |   F11    |   F12    |
+                            &lguishft LGUI LSHFT    &trans     &trans         &kp SPACE   &kp F11    &kp F12 
             >;
         };
         raise_layer {
