@@ -51,15 +51,17 @@
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp DELETE>;
         };
-        guishft: guishft {
+        
+        ht: ht {
             compatible = "zmk,behavior-hold-tap";
-            label = "GUISHFT";
+            label = "Hold-Tap Behavior";
             #binding-cells = <0>;
             tapping_term_ms = <100>;
-            quick_tap_ms = <0>;
+            quick_tap_ms = <75>;
             flavor = "tap-preferred";
-            bindings = <&kp LGUI>, <&kp LSHFT>;
+            bindings = <&kp>, <&kp>;
         };
+
     };
 
     combos {
@@ -89,8 +91,7 @@
                 // 
                 // __________________________________________________________________________________________________________
                 //                   | GUISHFT  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                                      &guishft   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
-
+                                    &ht LGUI LSHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
 
             >;
