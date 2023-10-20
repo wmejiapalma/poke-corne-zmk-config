@@ -89,7 +89,7 @@
                 // 
                 // __________________________________________________________________________________________________________
                 //                   | GUISHFT  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                                      &GUISHFT   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+                                      &guishft   &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
 
 
