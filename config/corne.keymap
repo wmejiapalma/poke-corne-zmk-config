@@ -86,7 +86,7 @@
             bindings = <
 &kp TAB          &kp Q  &kp W  &kp F           &kp P            &kp B        &kp J      &kp L        &kp U      &kp Y    &kp SEMI  &kp BSPC
 &lt 4 BACKSPACE  &kp A  &kp R  &kp S           &kp T            &kp G        &kp M      &kp N        &kp E      &kp I    &kp O     &kp SINGLE_QUOTE
-&kp LSHFT        &kp Z  &kp X  &kp C           &kp D            &kp V        &kp K      &kp H        &kp COMMA  &kp DOT  &kp FSLH  &escdelete
+&kp LSHFT        &kp Z  &kp X  &kp C           &kp D            &kp V        &kp K      &kp H        &kp COMMA  &kp DOT  &kp FSLH  &mt DELETE ESC
                                &mt LSHFT LGUI  &lt 1 BACKSPACE  &kp LCTRL    &kp SPACE  &lt 2 ENTER  &kp RALT
             >;
         };
@@ -104,20 +104,20 @@
         raise_layer {
             label = "Raise";
             bindings = <
-&trans     &kp N1  &kp N2  &kp N3  &kp N4     &kp N5       &kp N6     &kp N7    &kp N8    &kp N9  &kp N0  &trans
-&kp LCTRL  &trans  &trans  &trans  &kp MINUS  &kp GRAVE    &kp EQUAL  &kp LBRC  &kp RBRC  &trans  &trans  &kp ENTER
-&kp LSHFT  &trans  &trans  &trans  &kp UNDER  &trans       &trans     &kp LBKT  &kp RBKT  &trans  &trans  &kp ESC
-                           &trans  &trans     &kp SPACE    &trans     &trans    &kp RALT
+&trans     &kp N1  &kp N2  &kp N3                &kp N4                 &kp N5       &kp N6     &kp N7    &kp N8    &kp N9  &kp N0  &trans
+&trans     &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE    &kp EQUAL  &kp LBRC  &kp RBRC  &trans  &trans  &kp ENTER
+&kp LSHFT  &trans  &trans  &kp MINUS             &kp UNDER              &trans       &trans     &kp LBKT  &kp RBKT  &trans  &trans  &kp ESC
+                           &trans                &trans                 &kp SPACE    &trans     &trans    &kp RALT
             >;
         };
 
         extra_layer {
             label = "Extra";
             bindings = <
-&bt BT_CLR  &trans  &trans  &trans        &bt BT_PRV    &bt BT_NXT    &trans  &trans     &trans  &trans  &trans  &trans
-&trans      &trans  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &trans        &trans  &kp PSCRN  &trans  &trans  &trans  &kp ENTER
-&trans      &trans  &trans  &trans        &trans        &trans        &trans  &trans     &trans  &trans  &trans  &trans
-                            &trans        &trans        &trans        &trans  &trans     &trans
+&bt BT_CLR  &trans  &trans  &trans  &bt BT_PRV  &bt BT_NXT    &trans  &trans     &trans  &trans  &trans  &trans
+&trans      &trans  &trans  &trans  &trans      &trans        &trans  &kp PSCRN  &trans  &trans  &trans  &kp ENTER
+&trans      &trans  &trans  &trans  &trans      &trans        &trans  &trans     &trans  &trans  &trans  &trans
+                            &trans  &trans      &trans        &trans  &trans     &trans
             >;
         };
 
