@@ -41,9 +41,6 @@
 };
 
 / {
-    
-    //TODO: maybe replace the LCTRL with backspace for tap and hold for something else ()
-    //TODO fix lguishft since it doesn't work when holding
 
     behaviors {
         escdelete: escdelete {
@@ -55,12 +52,27 @@
 
     };
 
+    macros {
+        windows_paste: windows_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp V>;
+            label = "WINDOWS_PASTE";
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
             key-positions = <37 40>;
             bindings = <&mo 3>;
+        };
+        paste {
+            bindings = <&windows_paste>;
+            key-positions = <15 16>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <50>;
         };
     };
     
@@ -74,15 +86,15 @@
                 // |  TAB  |   Q   |   W   |   F   |   P   |   B   |        |   J   |   L   |   U   |   Y   |   ;    | BKSP |
                   &kp TAB  &kp Q   &kp W   &kp F   &kp P   &kp B            &kp J   &kp L   &kp U   &kp Y   &kp SEMI &kp BSPC
                 // __________________________________________________________________________________________________________
-                // |  BKSP |   A   |   R   |   S   |   T   |   G   |        |   M   |   N   |   E   |   I   |   O    | ENT  |
-           &lt 4 BACKSPACE &kp A   &kp R   &kp S   &kp T   &kp G            &kp M   &kp N   &kp E   &kp I   &kp O    &kp ENTER
+                // |  BKSP |   A   |   R   |   S   |   T   |   G   |        |   M   |   N   |   E   |   I   |   O    |   '  |
+           &lt 4 BACKSPACE &kp A   &kp R   &kp S   &kp T   &kp G            &kp M   &kp N   &kp E   &kp I   &kp O    &kp SINGLE_QUOTE
                 // _________________________________-------__________________________-------_________________________________
                 // |  SHFT |   Z   |   X   |   C   |   D   |   V   |        |   K   |   H   |   ,   |   .   |   /    | ESC  |
                  &kp LSHFT &kp Z   &kp X   &kp C   &kp D   &kp V            &kp K   &kp H  &kp COMMA  &kp DOT &kp FSLH &escdelete
                 // 
                 // __________________________________________________________________________________________________________
                 //                   |   GUI  |    LWR    |    CTRL    |        |   SPC   |    RSE    |   ALT    |
-                                    &kp LGUI    &mo 1     &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
+                            &mt LSHFT LGUI &lt 1 BACKSPACE &kp LCTRL             &kp SPACE &lt 2 ENTER  &kp RALT 
 
             >;
         };
@@ -100,8 +112,8 @@
                 // |  SHFT |  F6   |  F7   |  F8   |  F9   |  F10  |        |       |       |       |       |        | ESC  |
                 &kp LSHFT &kp F6  &kp F7  &kp F8  &kp F9  &kp F10           &trans  &trans  &trans &trans &trans &kp ESC
                 // __________________________________________________________________________________________________________
-                //                   | GUISHFT |         |         |        |   SPC     |   F11    |   F12    |
-                                  &kp LGUI        &trans     &trans         &kp SPACE   &kp F11    &kp F12 
+                //                   |         |         |         |        |   SPC     |   F11    |   F12    |
+                                      &trans    &trans     &trans         &kp SPACE   &kp F11    &kp F12 
             >;
         };
         raise_layer {
