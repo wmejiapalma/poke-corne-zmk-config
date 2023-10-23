@@ -90,10 +90,10 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp TAB          &kp Q  &kp W  &kp F                   &kp P        &kp B        &kp J      &kp L        &kp U      &kp Y    &kp SEMI  &kp BSPC
-&lt 4 BACKSPACE  &kp A  &kp R  &kp S                   &kp T        &kp G        &kp M      &kp N        &kp E      &kp I    &kp O     &kp SINGLE_QUOTE
-&kp LSHFT        &kp Z  &kp X  &kp C                   &kp D        &kp V        &kp K      &kp H        &kp COMMA  &kp DOT  &kp FSLH  &mt DELETE ESC
-                               &mt LC(BACKSPACE) LGUI  &lt 1 ENTER  &kp LCTRL    &kp SPACE  &lt 2 ENTER  &kp RALT
+&kp TAB          &kp Q  &kp W  &kp F     &kp P        &kp B              &kp J      &kp L        &kp U         &kp Y    &kp SEMI  &kp BSPC
+&lt 4 BACKSPACE  &kp A  &kp R  &kp S     &kp T        &kp G              &kp M      &kp N        &kp E         &kp I    &kp O     &kp SINGLE_QUOTE
+&kp LSHFT        &kp Z  &kp X  &kp C     &kp D        &kp V              &kp K      &kp H        &kp COMMA     &kp DOT  &kp FSLH  &mt DELETE ESC
+                               &kp LGUI  &lt 1 ENTER  &mt LCTRL ENTER    &kp SPACE  &lt 2 ENTER  &kp LEFT_ALT
             >;
         };
 
@@ -102,7 +102,7 @@
             bindings = <
 &kp ESC    &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp PG_UP  &trans    &kp UP    &trans     &trans  &kp DELETE
 &trans     &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR     &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &kp BSLH
-&kp LSHFT  &trans     &trans    &trans    &trans    &trans       &trans     &trans    &trans    &trans     &trans  &kp ESC
+&kp LSHFT  &trans     &trans    &trans    &trans    &trans       &trans     &trans    &trans    &trans     &trans  &kp BSLH
                                 &trans    &trans    &trans       &kp SPACE  &trans    &trans
             >;
         };
@@ -110,9 +110,9 @@
         raise_layer {
             label = "Raise";
             bindings = <
-&trans     &kp N1     &kp N2  &kp N3                &kp N4                 &kp N5       &kp N6     &kp N7    &kp N8    &kp N9  &kp N0     &trans
-&trans     &kp GRAVE  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS    &kp EQUAL  &kp LBRC  &kp RBRC  &trans  &kp GRAVE  &kp ENTER
-&kp LSHFT  &kp TILDE  &trans  &trans                &kp UNDER              &trans       &trans     &kp LBKT  &kp RBKT  &trans  &kp TILDE  &kp ESC
+&kp ESC    &kp N1     &kp N2  &kp N3                &kp N4                 &kp N5       &kp N6     &kp N7    &kp N8    &kp N9  &kp N0     &kp DELETE
+&trans     &kp GRAVE  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS    &kp EQUAL  &kp LBRC  &kp RBRC  &trans  &kp GRAVE  &kp PIPE
+&kp LSHFT  &kp TILDE  &trans  &trans                &kp UNDER              &trans       &trans     &kp LBKT  &kp RBKT  &trans  &kp TILDE  &kp BACKSLASH
                               &trans                &trans                 &kp SPACE    &trans     &trans    &kp RALT
             >;
         };
