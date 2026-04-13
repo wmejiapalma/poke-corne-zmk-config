@@ -4,44 +4,26 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/mouse.h>
+/* 1. Define custom max speeds BEFORE including pointing.h */
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  /* <--- New max speed setting (default: 600) */
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 50    /* <--- New scroll speed setting (default: 10) */
+
+/* 2. Include modern ZMK headers (removed the deprecated mouse.h) */
+#include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
-#define U_MOUSE_MOVE_MAX 1200                     /* <--- New max speed setting (default: 600) */
-
-#undef MOVE_UP
-#undef MOVE_DOWN
-#undef MOVE_LEFT
-#undef MOVE_RIGHT
-
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
-
+/* 3. Acceleration settings */
 &mmv {
-    time-to-max-speed-ms = <400>;             /* <--- How long time until max speed is reached (default: 500) */
+    time-to-max-speed-ms = <400>;             /* <--- How long time until max speed is reached */
 };
 
-&msc { time-to-max-speed-ms = <500>; };
-
-#define U_MOUSE_SCROLL_MAX 50                    /* <--- New max speed setting (default: 10) */
-
-#undef SCROLL_UP
-#undef SCROLL_DOWN
-#undef SCROLL_LEFT
-#undef SCROLL_RIGHT
-
-#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+&msc { 
+    time-to-max-speed-ms = <500>; 
+};
 
 //LEFT, DOWN, RIGHT mouse keys in one macro so that the layout can be better organized
-
 / {
     behaviors {
         escdelete: escdelete {
