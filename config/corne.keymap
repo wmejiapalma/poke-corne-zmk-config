@@ -40,10 +40,6 @@
 
 //LEFT, DOWN, RIGHT mouse keys in one macro so that the layout can be better organized
 
-&mwh {
-    time-to-max-speed-ms = <500>;                 /* <--- How long time until max speed is reached */
-};
-
 / {
     behaviors {
         escdelete: escdelete {
